@@ -1,4 +1,4 @@
-package com.gamingCafe.proj;
+package com.gamingCafe.Landing;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

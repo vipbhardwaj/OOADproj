@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>GGLeap GCM</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <form class="card" action="#" th:action="@{/login}" th:object="${login}" method="post">
+                <div class="card--header">
+                    <p class="title">Hello, Gamer!</p>
+                </div>
+                <div class="card--body">
+                    <label>User Name / User ID</label><input type="text" th:field="*{id}" required>
+                    <label>Password</label><input type="password" th:field="*{pwd}" required>
+                </div>
+                <div class="card--footer">
+                    <button type="submit" id="signup" class="btn_sign-up">login</button>
+                </div>
+            </form>
+          </div>
+    </body>
+</html>
