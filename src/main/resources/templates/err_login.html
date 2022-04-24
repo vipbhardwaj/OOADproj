@@ -1,23 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
     <head> 
-        <title>Getting Started: Handling Form Submission</title>
+        <title>GGLeap User Login</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="index.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="container"><div class="card">
+        <div class="container err-container"><div class="card">
             <div class="card--header">
-                <h1 class="title" th:text="'Hey! ' + ${login.id}"></h1>
+                <h1 class="title">OOPSIE !</h1>
             </div>
             <div class="card--body">
-                Games Owned: <br/>
-
-
+                <p th:text="${usr}"></p>
+                <p> does not exist or the password provided for the same isn't valid</p>
             </div>
-            <a href="/">Logout</a>
+            <a href="/">Retry ?</a>
         </div></div>
     </body>
 </html>

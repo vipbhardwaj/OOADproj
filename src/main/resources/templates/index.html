@@ -9,18 +9,29 @@
     </head>
     <body>
         <div class="container">
-            <form class="card" action="#" th:action="@{/login}" th:object="${login}" method="post">
+            <form class="card user-login" action="#" th:action="@{/usrLogin}" th:object="${usrLogin}" method="post">
                 <div class="card--header">
                     <p class="title">Hello, Gamer!</p>
                 </div>
                 <div class="card--body">
-                    <label>User Name / User ID</label><input type="text" th:field="*{id}" required>
-                    <label>Password</label><input type="password" th:field="*{pwd}" required>
+                    <label>Email</label><input type="text" th:name="usr_email" required>
+                    <label>Password</label><input type="password" th:name="usr_pwd" required>
                 </div>
                 <div class="card--footer">
                     <button type="submit" id="signup" class="btn_sign-up">login</button>
                 </div>
             </form>
+            <!-- <form class="card emp-login" action="#" th:action="@{/empLogin}" th:object="${empLogin}" method="post">
+                <div class="card--header">
+                    <p class="title">Hello, Admin!</p>
+                </div>
+                <div class="card--body">
+                    <label>Employee ID</label><input type="number" th:field="*{id}" required>
+                </div>
+                <div class="card--footer">
+                    <button type="submit" id="signup" class="btn_sign-up">login</button>
+                </div>
+            </form> -->
           </div>
     </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head> 
+        <title>GGLeap User Login</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container logged">
+            <h1 class="title" th:text="'Hey! ' + ${usr.p_name}" style="margin-top: 50px;"></h1>
+            <div class="card logged-card">
+                <div class="card--header">
+                    <h2>Games Owned :</h2>
+                </div>
+                <div class="card--body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Game Id</th>
+                                <th scope="col">Game Name</th>
+                                <th scope="col">Game Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="game : ${games}">
+                                <td th:text="${game.g_id}"></td>
+                                <td th:text="${game.g_name}"></td>
+                                <td th:text="${game.g_price}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card logged-card" style="text-align:center">
+                <a href="/">Logout</a>
+            </div>    
+        </div>
+    </body>
+</html>

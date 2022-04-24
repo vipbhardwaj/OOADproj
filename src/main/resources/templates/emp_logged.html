@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head> 
+        <title>GGLeap Employee Login</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container"><div class="card">
+            <div class="card--header">
+                <h1 class="title" th:text="'Hey! ' + ${login.id}"></h1>
+            </div>
+            <div class="card--body">
+                Games Owned: <br/>
+
+
+            </div>
+            <a href="/">Logout</a>
+        </div></div>
+    </body>
+</html>
