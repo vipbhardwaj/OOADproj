@@ -40,6 +40,7 @@ body {
   animation-fill-mode: forwards;
 }
 .logged-card {
+    color: black;
     margin-top: 50px;
     max-width: 80%;
 }
@@ -53,11 +54,13 @@ body {
     transform: translateY(0);
   }
 }
+
 p.title {
   font-size: 1.25rem;
   text-align: center;
   letter-spacing: 0.2rem;
 }
+
 .card--header {
   padding-bottom: 1rem;
 }
@@ -66,6 +69,7 @@ p.title {
   width: 100%;
   padding-bottom: 1rem;
 }
+
 label {
   display: block;
   font-family: sans-serif;
@@ -74,6 +78,7 @@ label {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
 }
+
 input {
   box-sizing: border-box;
   display: block;
@@ -88,6 +93,7 @@ input {
   border-radius: 4px;
   transition: background-color 0.3s;
 }
+
 input:hover,
 input:focus {
   background-color: rgba(255, 255, 255, 0.5);
@@ -98,6 +104,7 @@ input:focus {
   justify-content: center;
   align-items: center;
 }
+
 .btn_sign-up {
   font-size: 1.25rem;
   padding: 1rem 2rem;
@@ -124,21 +131,26 @@ table {
     margin: 2rem 0;
     width: 100%;
 }
+
 th, td {
     padding: 1rem 1.5rem;
     text-align: left;
 }
+
 th {
     background-color: rgb(126, 0, 124); /* header background color */
     color: #fff; /* header text color */
     font-weight: 600;
 }
+
 tr {
     padding: 0;
 }
+
 td {
     vertical-align: middle;
 }
-    tr:nth-child(even) td {
+
+tr:nth-child(even) td {
     background-color: rgba(0, 0, 0, .075); /* striped background color */
 }

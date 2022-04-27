@@ -12,7 +12,7 @@
             <h1 class="title" th:text="'Hey! ' + ${usr.p_name}" style="margin-top: 50px;"></h1>
             <div class="card logged-card">
                 <div class="card--header">
-                    <h2>Games Owned :</h2>
+                    <h2 style="text-align: center;">Games To Buy</h2>
                 </div>
                 <div class="card--body">
                     <table>
@@ -21,6 +21,7 @@
                                 <th scope="col">Game Id</th>
                                 <th scope="col">Game Name</th>
                                 <th scope="col">Game Price</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,14 +29,38 @@
                                 <td th:text="${game.g_id}"></td>
                                 <td th:text="${game.g_name}"></td>
                                 <td th:text="${game.g_price}"></td>
+                                <td><button class="btn_sign-up" href="/buyGame">Buy</a></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="card logged-card" style="text-align:center">
-                <a href="/">Logout</a>
-            </div>    
+            <div class="card logged-card">
+                <div class="card--header">
+                    <h2 style="text-align: center;">Packages available to Buy</h2>
+                </div>
+                <div class="card--body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Package Name</th>
+                                <th scope="col">Package Price</th>
+                                <th scope="col">Package Hours</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="pkg : ${pkgs}">
+                                <td th:text="${pkg.pkg_name}"></td>
+                                <td th:text="${pkg.pkg_price}"></td>
+                                <td th:text="${pkg.pkg_hours}"></td>
+                                <td><button class="btn_sign-up" href="/buyGame">Buy</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <a style="margin-top: 20px; margin-bottom: 20px;" class="btn_sign-up" href="/">Logout</a>
         </div>
     </body>
 </html>

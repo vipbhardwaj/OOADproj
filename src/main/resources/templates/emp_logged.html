@@ -8,16 +8,80 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="container"><div class="card">
-            <div class="card--header">
-                <h1 class="title" th:text="'Hey! ' + ${login.id}"></h1>
+        <div class="container logged">
+            <h1 class="title" th:text="'Hey! ' + ${emp.emp_name}" style="margin-top: 50px;"></h1>
+            <div class="card logged-card">
+                <div class="card--header">
+                    <h2 style="text-align: center;">Employees Managed by you</h2>
+                </div>
+                <div class="card--body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Phone No.</th>
+                                <th scope="col">Address</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="empl : ${manages}">
+                                <td th:text="${empl.emp_name}"></td>
+                                <td th:text="${empl.emp_phno}"></td>
+                                <td th:text="${empl.emp_address}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <div class="card--body">
-                Games Owned: <br/>
-
-
+            <div class="card logged-card">
+                <div class="card--header">
+                    <h2 style="text-align: center;">Packages bought by users</h2>
+                </div>
+                <div class="card--body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Player Email</th>
+                                <th scope="col">Package Name</th>
+                                <th scope="col">Package Price</th>
+                                <th scope="col">Package Hours</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="pkg : ${pkgs}">
+                                <div th:each="b : ${pkg.buys}">
+                                    <td th:text="${b.p_email}"></td>
+                                </div>
+                                <td th:text="${pkg.pkg_name}"></td>
+                                <td th:text="${pkg.pkg_price}"></td>
+                                <td th:text="${pkg.pkg_hours}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <a href="/">Logout</a>
-        </div></div>
+            <div class="card logged-card">
+                <div class="card--header">
+                    <h2 style="text-align: center;">Games Owned By Logged Users</h2>
+                </div>
+                <div class="card--body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Owner's Id</th>
+                                <th scope="col">Game Id</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="o : ${ownsList}">
+                                <td th:text="${o.p_email}"></td>
+                                <td th:text="${o.g_id}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <a style="margin-top: 20px; margin-bottom: 20px;" class="btn_sign-up" href="/">Logout</a>
+        </div>
     </body>
 </html>
