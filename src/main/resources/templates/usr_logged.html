@@ -12,6 +12,31 @@
             <h1 class="title" th:text="'Hey! ' + ${usr.p_name}" style="margin-top: 50px;"></h1>
             <div class="card logged-card">
                 <div class="card--header">
+                    <h2 style="text-align: center;">Games You Own</h2>
+                </div>
+                <div class="card--body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Game Id</th>
+                                <th scope="col">Game Name</th>
+                                <th scope="col">Game Price</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="o : ${owns}">
+                                <td th:text="${o.g_id}"></td>
+                                <td th:text="${o.g_name}"></td>
+                                <td th:text="${o.g_price}"></td>
+                                <td><a class="btn_sign-up" th:href="@{/delGame/{id}(id = ${o.g_id})}">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card logged-card">
+                <div class="card--header">
                     <h2 style="text-align: center;">Games To Buy</h2>
                 </div>
                 <div class="card--body">
@@ -29,7 +54,7 @@
                                 <td th:text="${game.g_id}"></td>
                                 <td th:text="${game.g_name}"></td>
                                 <td th:text="${game.g_price}"></td>
-                                <td><button class="btn_sign-up" href="/buyGame">Buy</a></td>
+                                <td><a class="btn_sign-up" th:href="@{/buyGame/{id}(id = ${game.g_id})}" method="get">Buy</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -54,7 +79,7 @@
                                 <td th:text="${pkg.pkg_name}"></td>
                                 <td th:text="${pkg.pkg_price}"></td>
                                 <td th:text="${pkg.pkg_hours}"></td>
-                                <td><button class="btn_sign-up" href="/buyGame">Buy</a></td>
+                                <td><button class="btn_sign-up">Buy</a></td>
                             </tr>
                         </tbody>
                     </table>

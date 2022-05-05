@@ -1,9 +1,13 @@
 package com.gamingCafe.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -12,37 +16,39 @@ import javax.persistence.Table;
 
 public class Owns {
     @Id
-    public String p_email;
+    @Column(name = "p_email")
+    public String pEmail;
+    // @ManyToMany
+    // Set<Game> games;
     @Id
-    public String g_id;
+    @Column(name = "g_id")
+    public String gid;
 
     public Owns() {
 
     }
 
-    public Owns(String p_email, String g_id) {
+    public Owns(String p_email, String gid) {
         super();
 
-        this.p_email = p_email;
-        this.g_id = g_id;
+        this.pEmail = p_email;
+        this.gid = gid;
     }
 
-    @Column(name = "p_email", nullable = false)
     public String getP_email() {
-        return p_email;
+        return pEmail;
     }
 
     public void setP_email(String p_email) {
-        this.p_email = p_email;
+        this.pEmail = p_email;
     }
 
-    @Column(name = "g_id", nullable = false)
     public String getG_id() {
-        return g_id;
+        return gid;
     }
 
-    public void setG_id(String g_id) {
-        this.g_id = g_id;
+    public void setG_id(String gid) {
+        this.gid = gid;
     }
     
 }

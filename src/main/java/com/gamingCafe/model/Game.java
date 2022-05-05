@@ -1,8 +1,15 @@
 package com.gamingCafe.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -10,15 +17,14 @@ import javax.persistence.Table;
 
 public class Game {
     @Id
-    public int g_id;
+    public String g_id;
     public String g_name;
     public int g_price;
-
     public Game() {
 
     }
 
-    public Game(int g_id, String g_name, int g_price) {
+    public Game(String g_id, String g_name, int g_price) {
         super();
 
         this.g_id = g_id;
@@ -27,11 +33,11 @@ public class Game {
     }
 
     @Column(name = "g_id", nullable = false)
-    public int getId() {
+    public String getId() {
         return g_id;
     }
 
-    public void setId(int g_id) {
+    public void setId(String g_id) {
         this.g_id = g_id;
     }
 

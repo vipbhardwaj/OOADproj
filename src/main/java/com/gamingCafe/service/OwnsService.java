@@ -1,6 +1,7 @@
 package com.gamingCafe.service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import com.gamingCafe.model.Owns;
@@ -21,17 +22,22 @@ public class OwnsService {
         return ownsList;
     }
 
-    public List<String> getOwnsByUser(String e) {
-        List<String> gameList = new ArrayList<>();
-        for(Owns o: ownsRepository.findAll()) {
-            if(o.p_email.equals(e)) {
-                gameList.add(o.g_id);
-            }
-        }
+    public List<Owns> getOwnsByUser(String e) {
+        List<Owns> gameList = new ArrayList<>();
+        ownsRepository.findAllBypEmail(e).forEach(gameList::add);
         return gameList;
     }
 
-    // public void createOwns(Owns o) {
-    //     ownsRepository.save(o);
-    // }
+    public void addGameForPlayer(String e, String g) {
+        Owns owns = new Owns(e, g);
+        ownsRepository.save(owns);
+        System.out.println("Game Bought\n\n\n\n");
+        return;
+    }
+
+    public void deleteGameForPlayer(String e, String g) {
+        ownsRepository.deleteBypEmailAndGid(e, g);
+        System.out.println("Game Deleted\n\n\n\n");
+        return;
+    }
 }

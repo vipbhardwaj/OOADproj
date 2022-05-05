@@ -20,13 +20,21 @@ public class OwnsController {
         return ownsList;
     }
 
-    public List<String> getOwnsByUsr(String email) {
-        List<String> ownsList = ownsService.getOwnsByUser(email);
+    public List<Owns> getOwnsByUsr(String email) {
+        List<Owns> ownsList = ownsService.getOwnsByUser(email);
         System.out.println("Returning Ownss for : " + email + "\n\n\n\n\n");
         return ownsList;
     }
 
-    // public void buyOwns(Owns g) {
-    //     ownsService.createOwns(g);
-    // }
+    public void addGameForPlayer(String email, String gameId) {
+        System.out.println("Buy clicked for : " + email + " and game : " + gameId + "\n\n\n\n\n");
+        ownsService.addGameForPlayer(email, gameId);
+        return;
+    }
+
+    public void deleteGameForPlayer(String email, String gameId) {
+        System.out.println("Delete clicked for : " + email + " and game : " + gameId + "\n\n\n\n\n");
+        ownsService.deleteGameForPlayer(email, gameId);
+        return;
+    }
 }
